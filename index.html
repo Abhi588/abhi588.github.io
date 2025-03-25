@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhishek Kumar - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,77 +13,255 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #333333;
-            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            background-color: #e9ecef;
+            color: #333333;
             line-height: 1.6;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 40px auto;
             padding: 20px;
         }
         .header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
         .header h1 {
-            font-size: 2.5em;
-            color: #0073b1;
+            font-size: 2.8em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
         .header p {
             font-size: 1.2em;
-            color: #666;
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+        .social-links {
+            margin-top: 15px;
+        }
+        .social-links a {
+            margin: 0 10px;
+            font-size: 1.5em;
+            color: #3498db;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #2c3e50;
         }
         .card {
-            background: #e0e0e0;
-            color: #585757;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: transform 0.3s;
+            background: #f8f9fa;
+            color: #2c3e50;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
         }
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #3498db;
         }
         .card h2 {
-            color: #0073b1;
-            margin-bottom: 10px;
-            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        .card h2 i {
+            margin-right: 15px;
+            color: #3498db;
         }
         .card p {
             font-size: 1em;
-            color: #444;
+            color: #34495e;
+            margin-bottom: 15px;
         }
         .card ul {
             list-style: none;
-            margin-top: 10px;
+            margin-top: 15px;
         }
         .card ul li {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             font-size: 0.95em;
+            position: relative;
+            padding-left: 25px;
+        }
+        .card ul li::before {
+            content: '•';
+            color: #3498db;
+            font-size: 1.2em;
+            position: absolute;
+            left: 5px;
+            top: -2px;
         }
         a {
-            color: #0073b1;
+            color: #3498db;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            transition: color 0.3s;
         }
         a:hover {
-            text-decoration: underline;
+            color: #2980b9;
+            text-decoration: none;
         }
         nav {
-            background: #0073b1;
-            padding: 10px;
+            background: #2c3e50;
+            padding: 15px;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         nav a {
             color: white;
-            margin: 0 15px;
+            margin: 0 20px;
             font-size: 1.1em;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        nav a:hover {
+            color: #3498db;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #3498db;
+            transition: width 0.3s;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .skill-category {
+            margin-bottom: 25px;
+        }
+        .skill-category p {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .skill-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-item {
+            background: #e9ecef;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #2c3e50;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .skill-item:hover {
+            background: #d1d9e6;
+            transform: translateY(-2px);
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        .project-item {
+            background: rgba(255,255,255,0.5);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .project-item:hover {
+            transform: translateY(-3px);
+        }
+        .project-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        .project-item a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #3498db;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .project-item a:hover {
+            background: #2980b9;
+        }
+        .experience-date {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .resume-download {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+            font-weight: 500;
+        }
+        .resume-download:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            color: white;
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 0 auto 25px;
+            display: block;
+            background-color: #f8f9fa;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .header h1 {
+                font-size: 2.2em;
+            }
+            .card {
+                padding: 20px;
+            }
+            nav a {
+                margin: 0 10px;
+                font-size: 1em;
+            }
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
         }
         @media (max-width: 600px) {
             .container {
@@ -93,9 +273,18 @@
             .card {
                 padding: 15px;
             }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
             nav a {
-                margin: 0 10px;
-                font-size: 1em;
+                margin: 5px 10px;
+                font-size: 0.9em;
+            }
+            .profile-img {
+                width: 120px;
+                height: 120px;
             }
         }
     </style>
@@ -103,32 +292,40 @@
 <body>
     
     <nav>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#resume">Resume</a>
+        <a href="#about"><i class="fas fa-user"></i> About</a>
+        <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
+        <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
+        <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+        <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+        <a href="#resume"><i class="fas fa-file-alt"></i> Resume</a>
     </nav>
     <div class="container">
         <div class="header">
-            <img src="profile.jpg" alt="Profile Photo" style="width: 150px; border-radius: 50%; display: block; margin: 0 auto 20px;">
+            <img src="profile.jpg" alt="Profile Photo" class="profile-img">
             <h1>Abhishek Kumar</h1>
-            <p>abhithakur588@gmail.com | +918090413591 | <a href="https://www.linkedin.com/in/abhishek-kumar-bb2009133/" target="_blank">LinkedIn</a></p>
+            <p>Machine Learning Engineer & Data Science Specialist</p>
+            <div class="social-links">
+                <a href="mailto:abhithakur588@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+918090413591"><i class="fas fa-phone"></i></a>
+                <a href="https://www.linkedin.com/in/abhishek-kumar-bb2009133/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Abhi588" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
         </div>
 
         <div class="card" id="about">
-            <h2>About Me</h2>
+            <h2><i class="fas fa-user-circle"></i> About Me</h2>
             <p>Experienced Data Science Specialist with a demonstrated history of working in the financial services industry and energy industry. Contributed in reducing UPI fraud by 60% in the finance ecosystem using advanced Machine learning models and Big data tools. 
-                Developed and deployed several computer vision solutions based on object detection, tracking and segmentation for productivity and health safety environment in industrial floor settings.
-                Skilled in Python, SQL, ML, DL, Computer Vision, GCP, Java, Big Data tools (Hadoop, Hive, PySpark, Hue, Oziee), Mlops tools (Docker, MLflow, Torchserve, Tensorflowserve, feast), 
+                Developed and deployed several computer vision solutions based on object detection, tracking and segmentation for productivity and health safety environment in industrial floor settings.</p>
+            <p>Skilled in Python, SQL, ML, DL, Computer Vision, GCP, Java, Big Data tools (Hadoop, Hive, PySpark, Hue, Oziee), Mlops tools (Docker, MLflow, Torchserve, Tensorflowserve, feast). 
                 Strong engineering professional with an MTech - Master of Technology focused in Computer Science from the Indian Institute of Technology (Indian School of Mines), Dhanbad.</p>
         </div>
 
         <div class="card" id="experience">
-            <h2>Experience</h2>
-            <p><strong>Machine Learning Engineer 2</strong> - Schlumberger | July 2022 - Present</p>
+            <h2><i class="fas fa-briefcase"></i> Experience</h2>
+            <div class="experience-date">July 2022 - Present</div>
+            <p><strong>Machine Learning Engineer 2</strong> - Schlumberger</p>
             <ul>
-                <li></li>Developed vision-based algorithms for productivity (people count, workstation,
+                <li>Developed vision-based algorithms for productivity (people count, workstation,
                 and tools utilization) and health and safety non-compliance (mechanical lifting,
                 PPE kit, zone intrusion) in industrial floor settings. Achieved 80% accuracy.</li>
                 <li>Trained and fine tuned DL models on custom image datasets of persons, hats,
@@ -140,37 +337,40 @@
                 <li>Revamped architecture through scheduling, logging, Pub/Sub integration, code
                 modularization, unit testing, monitoring, dashboards, and MLops integration.</li>
             </ul>
-            <p><strong>Associate Data Scientist</strong> - NPCI| Oct 2020 - July 2022</p>
+            
+            <div class="experience-date">October 2020 - July 2022</div>
+            <p><strong>Associate Data Scientist</strong> - NPCI</p>
             <ul>
                 <li>Responsibility includes fraud Model building, feature engineering, Exploratory
-                    data Analysis,Model training and testing, data pipelines script generation,
-                    scheduling, service validation, user profiling, data docs preparations.
-                <li>Built several MLmodels for P2P(Person to Person), P2M(Person tomerchant)
+                    data Analysis, Model training and testing, data pipelines script generation,
+                    scheduling, service validation, user profiling, data docs preparations.</li>
+                <li>Built several ML models for P2P(Person to Person), P2M(Person to merchant)
                     fraud detection which serves almost 25cr UPI transactions per day. Built vpa
                     (text) clustering model using NLP library. Reduced fraud by 60% in ecosystem.</li>
                 <li>Contributed in Generation of more than 200 features for every customer on
                     UPI platform, EDA, Visualization, automating training and testing of ml models.</li>
-                
             </ul>
-            
         </div>
 
         <div class="card" id="education">
-            <h2>Education</h2>
-            <p><strong>Master of Technology</strong> - IIT ISM Dhanbad | 2018 - 2020</p>
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="experience-date">2018 - 2020</div>
+            <p><strong>Master of Technology</strong> - IIT ISM Dhanbad</p>
             <ul>
                 <li>Computer science and engineering</li>
             </ul>
-            <p><strong>Bachelor of Technology</strong> - IIT ISM Dhanbad | 2014 - 2018</p>
+            
+            <div class="experience-date">2014 - 2018</div>
+            <p><strong>Bachelor of Technology</strong> - IIT ISM Dhanbad</p>
             <ul>
                 <li>Computer science and engineering</li>
             </ul>
         </div>
 
         <div class="card" id="skills">
-            <h2>Skills</h2>
+            <h2><i class="fas fa-code"></i> Skills</h2>
             <div class="skill-category">
-                <p><strong>PROGRAMMING</strong></p>
+                <p><i class="fas fa-laptop-code"></i> PROGRAMMING</p>
                 <div class="skill-grid">
                     <span class="skill-item">Python</span>
                     <span class="skill-item">Java</span>
@@ -179,7 +379,7 @@
             </div>
 
             <div class="skill-category">
-                <p><strong>DATA SCIENCE</strong></p>
+                <p><i class="fas fa-brain"></i> DATA SCIENCE</p>
                 <div class="skill-grid">
                     <span class="skill-item">Machine Learning</span>
                     <span class="skill-item">Deep Learning</span>
@@ -201,7 +401,7 @@
             </div>
 
             <div class="skill-category">
-                <p><strong>PRODUCTIVE TOOLS</strong></p>
+                <p><i class="fas fa-tools"></i> PRODUCTIVE TOOLS</p>
                 <div class="skill-grid">
                     <span class="skill-item">VS Code</span>
                     <span class="skill-item">Anaconda</span>
@@ -218,48 +418,47 @@
             </div>
 
             <div class="skill-category">
-                <p><strong>CODING PROFILES</strong></p>
+                <p><i class="fas fa-code-branch"></i> CODING PROFILES</p>
                 <div class="skill-grid">
                     <span class="skill-item"><a href="https://www.hackerearth.com/@abhi588/" target="_blank">HackerEarth</a></span>
                     <span class="skill-item"><a href="https://leetcode.com/u/abhi_588/" target="_blank">LeetCode</a></span>
                     <span class="skill-item"><a href="https://www.codechef.com/users/abhi588" target="_blank">CodeChef</a></span>
-                    <span class="skill-item"><a href="https://www.kaggle.com/abhi588" target="_blank">kaggle</a></span>
+                    <span class="skill-item"><a href="https://www.kaggle.com/abhi588" target="_blank">Kaggle</a></span>
                 </div>
             </div>
         </div>
+        
         <div class="card" id="projects">
-            <h2>Projects & Publications</h2>
+            <h2><i class="fas fa-project-diagram"></i> Projects & Publications</h2>
             <div class="project-grid">
                 <div class="project-item">
-                    <h3>PATENT Publication Innovation title Video analytics for industrial floor setting</h3>
+                    <h3>PATENT Publication: Video Analytics for Industrial Floor Setting</h3>
                     <p>Safety non-compliance and, simultaneously, productivity metrices are computed and tracked. 
                         Objects of interest (such as technicians, tools, cranes, slings, gloves, assets) 
                         are identified and tracked from real time streams of cameras through the application of 
                         several filtration processes (boundary based, aspect-ratio based, intersection-over-union based,
                          dice coefficient-based, and custom model bounding box filtration techniques) and 
-                         are then projected onto a 2D homographic map which localizes their position. 
-                         The localized position is filtered using custom time series and frequency-based 
+                         are then projected onto a 2D homographic map which localizes their position.</p>
+                    <p>The localized position is filtered using custom time series and frequency-based 
                          filters and aggregated over a set of defined time ranges to obtain productivity 
                          and safety KPIs. Non-compliance detections are flagged with video recorded for 
-                         the given time duration and anonymized with custom processes to ensure data privacy. 
-                         Productivity KPIs are represented in a dashboard with readings collected at different 
-                         time intervals like hourly, daily, weekly and monthly.</p>
-                    <a href="https://patents.justia.com/patent/20240281954" target="_blank">View Project</a>
+                         the given time duration and anonymized with custom processes to ensure data privacy.</p>
+                    <a href="https://patents.justia.com/patent/20240281954" target="_blank">View Patent</a>
                 </div>
                 <div class="project-item">
-                    <h3>PLANT DISEASE DETECTION | M.Tech | Jan20 - May20</h3>
-                    <p>Created predictive model for classification of Plant’s disease based on
-                        leaf images(Plant Village Dataset). Used CNN, Keras, Python, Image
+                    <h3>PLANT DISEASE DETECTION | M.Tech | Jan 2020 - May 2020</h3>
+                    <p>Created predictive model for classification of Plant's disease based on
+                        leaf images (Plant Village Dataset). Used CNN, Keras, Python, Image
                         Processing to predict detect disease and achieved accuracy of 96.1%.</p>
-                    <a href="#" target="_blank">View Project</a>
+                    <a href="https://github.com/Abhi588/Crop-Disease-Detection-using-Convolutional-Neural-Network" target="_blank">View Project</a>
                 </div>
-                
-                
             </div>
         </div>
+        
         <div class="card" id="resume">
-            <h2>Resume</h2>
-            <p>Download my full resume: <a href="resume.pdf" target="_blank">Resume.pdf</a></p>
+            <h2><i class="fas fa-file-alt"></i> Resume</h2>
+            <p>Download my full resume for more detailed information about my experience, skills, and qualifications.</p>
+            <a href="resume.pdf" target="_blank" class="resume-download"><i class="fas fa-download"></i> Download Resume</a>
         </div>
     </div>
 </body>
