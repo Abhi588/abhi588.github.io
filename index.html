@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Kumar - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #333333;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            color: #0073b1;
+        }
+        .header p {
+            font-size: 1.2em;
+            color: #666;
+        }
+        .card {
+            background: #e0e0e0;
+            color: #585757;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h2 {
+            color: #0073b1;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        .card p {
+            font-size: 1em;
+            color: #444;
+        }
+        .card ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+        .card ul li {
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+        a {
+            color: #0073b1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #0073b1;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            font-size: 1.1em;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .card {
+                padding: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#resume">Resume</a>
+    </nav>
+    <div class="container">
+        <div class="header">
+            <img src="profile.jpg" alt="Profile Photo" style="width: 150px; border-radius: 50%; display: block; margin: 0 auto 20px;">
+            <h1>Abhishek Kumar</h1>
+            <p>abhithakur588@gmail.com | +918090413591 | <a href="https://www.linkedin.com/in/abhishek-kumar-bb2009133/" target="_blank">LinkedIn</a></p>
+        </div>
+
+        <div class="card" id="about">
+            <h2>About Me</h2>
+            <p>Experienced Data Science Specialist with a demonstrated history of working in the financial services industry and energy industry. Contributed in reducing UPI fraud by 60% in the finance ecosystem using advanced Machine learning models and Big data tools. 
+                Developed and deployed several computer vision solutions based on object detection, tracking and segmentation for productivity and health safety environment in industrial floor settings.
+                Skilled in Python, SQL, ML, DL, Computer Vision, GCP, Java, Big Data tools (Hadoop, Hive, PySpark, Hue, Oziee), Mlops tools (Docker, MLflow, Torchserve, Tensorflowserve, feast), 
+                Strong engineering professional with an MTech - Master of Technology focused in Computer Science from the Indian Institute of Technology (Indian School of Mines), Dhanbad.</p>
+        </div>
+
+        <div class="card" id="experience">
+            <h2>Experience</h2>
+            <p><strong>Machine Learning Engineer 2</strong> - Schlumberger | July 2022 - Present</p>
+            <ul>
+                <li></li>Developed vision-based algorithms for productivity (people count, workstation,
+                and tools utilization) and health and safety non-compliance (mechanical lifting,
+                PPE kit, zone intrusion) in industrial floor settings. Achieved 80% accuracy.</li>
+                <li>Trained and fine tuned DL models on custom image datasets of persons, hats,
+                gloves, and tools for object detection, segmentation, and classification.</li>
+                <li>Engineered model service architecture using TorchServe, increased fps 2 to 4.</li>
+                <li>Streamlined deployment in different locations based on a custom developed
+                CI/CD module using Docker, Azure Pipelines, Git, Google Container Registry,
+                and other GCP services. Which reduced use-case deployment time by 75%.</li>
+                <li>Revamped architecture through scheduling, logging, Pub/Sub integration, code
+                modularization, unit testing, monitoring, dashboards, and MLops integration.</li>
+            </ul>
+            <p><strong>Associate Data Scientist</strong> - NPCI| Oct 2020 - July 2022</p>
+            <ul>
+                <li>Responsibility includes fraud Model building, feature engineering, Exploratory
+                    data Analysis,Model training and testing, data pipelines script generation,
+                    scheduling, service validation, user profiling, data docs preparations.
+                <li>Built several MLmodels for P2P(Person to Person), P2M(Person tomerchant)
+                    fraud detection which serves almost 25cr UPI transactions per day. Built vpa
+                    (text) clustering model using NLP library. Reduced fraud by 60% in ecosystem.</li>
+                <li>Contributed in Generation of more than 200 features for every customer on
+                    UPI platform, EDA, Visualization, automating training and testing of ml models.</li>
+                
+            </ul>
+            
+        </div>
+
+        <div class="card" id="education">
+            <h2>Education</h2>
+            <p><strong>Master of Technology</strong> - IIT ISM Dhanbad | 2018 - 2020</p>
+            <ul>
+                <li>Computer science and engineering</li>
+            </ul>
+            <p><strong>Bachelor of Technology</strong> - IIT ISM Dhanbad | 2014 - 2018</p>
+            <ul>
+                <li>Computer science and engineering</li>
+            </ul>
+        </div>
+
+        <div class="card" id="skills">
+            <h2>Skills</h2>
+            <div class="skill-category">
+                <p><strong>PROGRAMMING</strong></p>
+                <div class="skill-grid">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">Java</span>
+                    <span class="skill-item">SQL</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <p><strong>DATA SCIENCE</strong></p>
+                <div class="skill-grid">
+                    <span class="skill-item">Machine Learning</span>
+                    <span class="skill-item">Deep Learning</span>
+                    <span class="skill-item">Docker</span>
+                    <span class="skill-item">Computer Vision</span>
+                    <span class="skill-item">GCP</span>
+                    <span class="skill-item">GenAI</span>
+                    <span class="skill-item">Feast</span>
+                    <span class="skill-item">BashScript</span>
+                    <span class="skill-item">Airflow</span>
+                    <span class="skill-item">Numpy</span>
+                    <span class="skill-item">Pandas</span>
+                    <span class="skill-item">sklearn</span>
+                    <span class="skill-item">Open CV</span>
+                    <span class="skill-item">Pytorch</span>
+                    <span class="skill-item">MLflow</span>
+                    <span class="skill-item">BigQuery</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <p><strong>PRODUCTIVE TOOLS</strong></p>
+                <div class="skill-grid">
+                    <span class="skill-item">VS Code</span>
+                    <span class="skill-item">Anaconda</span>
+                    <span class="skill-item">Git</span>
+                    <span class="skill-item">Jupyter Notebook/lab</span>
+                    <span class="skill-item">Excel</span>
+                    <span class="skill-item">Tableau</span>
+                    <span class="skill-item">Jira</span>
+                    <span class="skill-item">Linux</span>
+                    <span class="skill-item">Windows</span>
+                    <span class="skill-item">Azure DevOps</span>
+                    <span class="skill-item">Eclipse</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <p><strong>CODING PROFILES</strong></p>
+                <div class="skill-grid">
+                    <span class="skill-item"><a href="https://www.hackerearth.com/@abhi588/" target="_blank">HackerEarth</a></span>
+                    <span class="skill-item"><a href="https://leetcode.com/u/abhi_588/" target="_blank">LeetCode</a></span>
+                    <span class="skill-item"><a href="https://www.codechef.com/users/abhi588" target="_blank">CodeChef</a></span>
+                    <span class="skill-item"><a href="https://www.kaggle.com/abhi588" target="_blank">kaggle</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="card" id="projects">
+            <h2>Projects & Publications</h2>
+            <div class="project-grid">
+                <div class="project-item">
+                    <h3>PATENT Publication Innovation title Video analytics for industrial floor setting</h3>
+                    <p>Safety non-compliance and, simultaneously, productivity metrices are computed and tracked. 
+                        Objects of interest (such as technicians, tools, cranes, slings, gloves, assets) 
+                        are identified and tracked from real time streams of cameras through the application of 
+                        several filtration processes (boundary based, aspect-ratio based, intersection-over-union based,
+                         dice coefficient-based, and custom model bounding box filtration techniques) and 
+                         are then projected onto a 2D homographic map which localizes their position. 
+                         The localized position is filtered using custom time series and frequency-based 
+                         filters and aggregated over a set of defined time ranges to obtain productivity 
+                         and safety KPIs. Non-compliance detections are flagged with video recorded for 
+                         the given time duration and anonymized with custom processes to ensure data privacy. 
+                         Productivity KPIs are represented in a dashboard with readings collected at different 
+                         time intervals like hourly, daily, weekly and monthly.</p>
+                    <a href="https://patents.justia.com/patent/20240281954" target="_blank">View Project</a>
+                </div>
+                <div class="project-item">
+                    <h3>PLANT DISEASE DETECTION | M.Tech | Jan20 - May20</h3>
+                    <p>Created predictive model for classification of Plant’s disease based on
+                        leaf images(Plant Village Dataset). Used CNN, Keras, Python, Image
+                        Processing to predict detect disease and achieved accuracy of 96.1%.</p>
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="card" id="resume">
+            <h2>Resume</h2>
+            <p>Download my full resume: <a href="resume.pdf" target="_blank">Resume.pdf</a></p>
+        </div>
+    </div>
+</body>
+</html>
