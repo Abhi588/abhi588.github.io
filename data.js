@@ -120,9 +120,9 @@ const PORTFOLIO = {
     icon: "fas fa-graduation-cap",
     heading: "Education",
     items: [
-      { date: "2018 - 2020", title: "M.Tech, Computer Science", company: "IIT (ISM) Dhanbad", detail: "CGPA: 8.87 / 10.0" },
-      { date: "2014 - 2018", title: "B.Tech, Computer Science", company: "University of Allahabad", detail: "74.1%" },
-      { date: "2011 - 2013", title: "Intermediate (CBSE)", company: "JNV Saharsa", detail: "90%" },
+      { date: "2018 - 2020", title: "M.Tech, Computer Science", company: "IIT (ISM) Dhanbad", detail: "" },
+      { date: "2014 - 2018", title: "B.Tech, Computer Science", company: "University of Allahabad", detail: "" },
+      { date: "2011 - 2013", title: "Intermediate (CBSE)", company: "JNV Saharsa", detail: "" },
     ],
   },
 
